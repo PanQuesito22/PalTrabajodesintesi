@@ -1,0 +1,26 @@
+.texto-maximo {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.texto {
+  text-align: center;
+}
+
+.texto1 {
+padding-left: 30px;
+padding-right: : 30px;
+
+}
+
+.texto2 {
+padding-left: 30px;
+padding-right:  30px;
+
+}
+
+.texto3 {
+  padding-left: 30px;
+
+padding-right:  30px;
+}
