@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-
-.background-color{
-  background-color: grey;
-}
->>>>>>> c48586f496b4d4240fbcb6d82094ccf2e8c6e87c
 .img{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
