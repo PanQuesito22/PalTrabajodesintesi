@@ -1,3 +1,8 @@
+menu {
+  padding: 0;
+  margin: 0;
+}
+
  /* Navbar container */
 .navbar {
  overflow: hidden;
@@ -67,3 +72,30 @@
 .dropdown:hover .dropdown-content {
  display: block;
 }
+.columnas {
+  display: grid;
+  grid-template-columns: 1fr 0fr 1fr ;
+  padding: 5px;
+}
+
+#footer {
+   background-color: #7bf71b;
+   color: gray;
+ }
+
+ .footer-columns {
+padding: 100%;
+ }
+
+ #footer h6 {
+   font-size: 1em;
+ }
+
+ #footer ul {
+   font-size: 0.8em;
+ }
+ .footer-column ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+ }

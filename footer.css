@@ -1,0 +1,70 @@
+*{
+box-sizing: border-box;
+border: thin solid  white;
+
+
+}
+#main
+{
+position: relative;
+display: grid;
+grid-gap: 0.5em;
+}
+.Calidad
+{
+position: relative;
+right: 45em;
+}
+.Daño
+{
+position: relative;
+right: 45em;
+}
+.Daño_torres
+{
+  position: relative;
+  right: 45em;
+}
+.Vida
+{
+  position: relative;
+  right: 45em;
+}
+.Velocidad
+{
+  position: relative;
+  right: 45em;
+}
+.Movimiento
+{
+  position: relative;
+  right: 45em;
+}
+.Desbloqueo
+{
+  position: relative;
+  right: 45em;
+}
+
+
+
+#header
+{
+  grid-area: h;
+}
+#left-menu
+{
+  grid-area: l;
+}
+#content
+{
+  grid-area: c;
+}
+#right-menu
+{
+  grid-area: r;
+}
+#footer
+{
+  grid-area: f;
+}
