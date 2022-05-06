@@ -26,8 +26,12 @@ menu {
  overflow: hidden;
 }
 
+.subdropdown .subdropbtn {
+  color: black !important;
+}
+
 /* Dropdown button */
-.dropdown .dropbtn {
+.dropdown .dropbtn, .subdropdown .subdropbtn {
  font-size: 16px;
  border: none;
  outline: none;
@@ -39,14 +43,39 @@ menu {
 }
 
 /* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover, .dropdown:hover .dropbtn, .subdropdown:hover .subdropbtn {
  background-color: red;
 }
 
 /* Dropdown content (hidden by default) */
-.dropdown-content {
+.dropdown-content, .subdropdown-content {
  display: none;
  position: absolute;
+ background-color: #f9f9f9;
+ min-width: 160px;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 1;
+}
+
+.subdropdown-content {
+  display: none !important;
+}
+
+.subdropdown  {
+  position: relative;
+}
+
+.subdropdown:hover .subdropdown-content {
+  display: block !important;
+  color: white !important;
+}
+
+
+
+.subdropdown-content {
+ display: none;
+ position: absolute;
+
  background-color: #f9f9f9;
  min-width: 160px;
  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
