@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="web.css" />
+  <link rel="stylesheet" href="programacion-del-coche.css" />
+  <link rel="stylesheet" href="index.css" />
+
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+</head>
+<body>
+  <menu></menu>
+
+  <div class="texto2">
+
+    <h3>Codigo de proximidad (ojos de mosca)</h3>
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> Trigger <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3</span>;   <span style="color: #888888">//Pin digital 2 para el Trigger del sensor</span>
+          <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> Echo <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span>;   <span style="color: #888888">//Pin digital 3 para el Echo del senso</span>
+
+             <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>() {
+              Serial.begin(<span style="color: #0000DD; font-weight: bold">9600</span>);<span style="color: #888888">//iniciailzamos la comunicación</span>
+              pinMode(Trigger, OUTPUT); <span style="color: #888888">//pin como salida</span>
+              pinMode(Echo, INPUT);  <span style="color: #888888">//pin como entrada</span>
+              digitalWrite(Trigger, LOW);<span style="color: #888888">//Inicializamos el pin con 0</span>
+
+            <span style="color: #888888">// initialize digital pin LED_BUILTIN as an output.</span>
+                pinMode(LED_BUILTIN, OUTPUT);
+              }
+
+            <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>()
+              {
+
+              <span style="color: #333399; font-weight: bold">long</span> t; <span style="color: #888888">//timepo que demora en llegar el eco</span>
+                  <span style="color: #333399; font-weight: bold">long</span> d; <span style="color: #888888">//distancia en centimetros</span>
+
+                  digitalWrite(Trigger, HIGH);
+                   delayMicroseconds(<span style="color: #0000DD; font-weight: bold">10</span>);          <span style="color: #888888">//Enviamos un pulso de 10us</span>
+                       digitalWrite(Trigger, LOW);
+
+                         t <span style="color: #333333">=</span> pulseIn(Echo, HIGH); <span style="color: #888888">//obtenemos el ancho del pulso</span>
+                          d <span style="color: #333333">=</span> t<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">59</span>;             <span style="color: #888888">//escalamos el tiempo a una distancia en cm</span>
+
+                          Serial.print(<span style="background-color: #fff0f0">&quot;Distancia: &quot;</span>);
+                            Serial.print(d);      <span style="color: #888888">//Enviamos serialmente el valor de la distancia</span>
+                            Serial.print(<span style="background-color: #fff0f0">&quot;cm&quot;</span>);
+                            Serial.println();
+                            delay(<span style="color: #0000DD; font-weight: bold">100</span>);          <span style="color: #888888">//Hacemos una pausa de 100ms</span>
+
+
+                             digitalWrite(LED_BUILTIN, HIGH);   <span style="color: #888888">// turn the LED on</span>
+                              delay(<span style="color: #0000DD; font-weight: bold">100</span>);                       <span style="color: #888888">// wait for half a second</span>
+                              digitalWrite(LED_BUILTIN, LOW);    <span style="color: #888888">// turn the LED off</span>
+                              delay(<span style="color: #0000DD; font-weight: bold">100</span>);                       <span style="color: #888888">// wait for half a second</span>
+                            }
+                            <div class="ojos">
+                              <img src="ojos.gif">
+                            </div>
+    </pre></div>
+
+                      </div>
+
+
+                            <div id="footer">
+                              <div class="columnas">
+                                <div class="footer-column">
+                                  <h6></h6>
+                                  <ul>
+                                    <li>numero de movil</li>
+                                    <li>vpachon@elpuig.xeill.net</li>
+                                    <li>FACEBOOK</li>
+                                    <li>TWITTER</li>
+                                    <li>LINKEDIN</li>
+                                    <li></li>
+                                  </ul>
+                                </div>
+                                <div class="footer-column">
+                                  <h6>FIND US</h6>
+                                  <ul>
+                                    <li>Avinguda de l'Anselm de Riu, 10</li>
+                                    <li>08924</li>
+                                    <li>Barcelona</li>
+                                    ESPAÑA
+                                    <img src="bandera-ESPAÑA.gif" height="100px" width="120px">
+                                    <li>888-123-1234</li>
+                                  </ul>
+                                </div>
+                              </div>
+
+
+                    </body>
+                    <script type="text/javascript" src="main.js"></script>
+
+                    </html>

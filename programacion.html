@@ -6,161 +6,33 @@
   <title>Codigo arduino</title>
 
   <link rel="stylesheet" href="web.css" />
+  <link rel="stylesheet" href="index.css" />
+
   <link rel="stylesheet" href="programacion-del-coche.css" />
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
 </head>
 <body>
 
   <menu></menu>
-  <div class="texto">
+  <div class="links">
 
-  <h1>Codigos que hemos utilizado </h1>
+  <p>
+  <a href="programacion-servo.html">Codigo ServoMotor</a>
+</p>
+<p>
+  <a href="programacion-ruedas.html">Codigo Ruedas</a>
+</p>
+<p>
+  <a href="programacion-ojos.html">Codigo Modulo Ultrasonico</a>
+</p>
+
 </div>
-<div class="texto-maximo">
-
-  <div class="texto1">
-
-  <h3>Codigo del servomotor</h3>
-<p>  // Incluímos la librería para poder controlar el servo
-  #include </p>
-
-  <p> // Declaramos la variable para controlar el servo
-  Servo servoMotor; </p>
-
-<p>  void setup() {
-    // Iniciamos el monitor serie para mostrar el resultado
-    Serial.begin(9600); </p>
-
-<p>    // Iniciamos el servo para que empiece a trabajar con el pin 9
-    servoMotor.attach(8); </p>
-  }
-
-<p>  void loop() { </p>
-
-  <p>  // Desplazamos a la posición 0º
-    servoMotor.write(0);
-    // Esperamos 1 segundo
-    delay(1000); </p>
-
-  <p>  // Desplazamos a la posición 90º
-    servoMotor.write(90);
-    // Esperamos 1 segundo
-    delay(1000); </p>
-
-  <p>  // Desplazamos a la posición 180º
-    servoMotor.write(180);
-    // Esperamos 1 segundo
-    delay(1000); </p>
-  }
-</div>
-<div class="texto2">
-
-  <h3>Codigo de proximidad (ojos de mosca)</h3>
-  <p>const int Trigger = 3;   //Pin digital 2 para el Trigger del sensor
-    const int Echo = 2;   //Pin digital 3 para el Echo del sensor<p>
-
-      <p>  void setup() {
-        Serial.begin(9600);//iniciailzamos la comunicación
-        pinMode(Trigger, OUTPUT); //pin como salida
-        pinMode(Echo, INPUT);  //pin como entrada
-        digitalWrite(Trigger, LOW);//Inicializamos el pin con 0</p>
-
-        <p>// initialize digital pin LED_BUILTIN as an output.
-          pinMode(LED_BUILTIN, OUTPUT);</p>
-        }
-
-        <p>void loop()</p>
-        {
-
-          <p>long t; //timepo que demora en llegar el eco
-            long d; //distancia en centimetros</p>
-
-            <p>  digitalWrite(Trigger, HIGH);
-              <p> delayMicroseconds(10);          //Enviamos un pulso de 10us
-                <p>  digitalWrite(Trigger, LOW);
-
-                  <p>  t = pulseIn(Echo, HIGH); //obtenemos el ancho del pulso
-                    d = t/59;             //escalamos el tiempo a una distancia en cm
-
-                    <p> Serial.print("Distancia: ");
-                      Serial.print(d);      //Enviamos serialmente el valor de la distancia
-                      Serial.print("cm");
-                      Serial.println();
-                      delay(100);          //Hacemos una pausa de 100ms</p>
-
-
-                      <p>  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on
-                        delay(100);                       // wait for half a second
-                        digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
-                        delay(100);                       // wait for half a second
-                      }
-                    </div>
-
-<div class="texto3">
-  <h3>Codigo de los motores</h3>
-  <p>int mizqA = 3; // Pin digital del motor de la izquierda adelante
-    int mizqB = 4; // Pin digital del motor izquierda hacia atras</p>
-
-    <p>int mderA = 5; // Pin digital del motor de la derecha adelante
-      int mderB = 6; // Pin digital del motor derecha hacia atras</p>
-
-      <p>void setup(){
-        // Configuramos como salidas los pines donde se conectan los motores
-        pinMode(mizqA, OUTPUT);
-        pinMode(mizqB, OUTPUT);</p>
-
-        <p>pinMode(mderA, OUTPUT);
-          pinMode(mderB, OUTPUT);
-        } </p>
-
-        <p> void loop() </p>
-        {
-          <p> // Motor gira en un sentido digitalWrite (mizqA, HIGH); digitalWrite (mizqB, LOW); delay(4000); </p>
-          <p> // Motor no gira digitalWrite (mizqA, LOW);  delay(500);</p>
-          <p> // Motor gira en sentido inverso  digitalWrite (mizqB, HIGH); delay(4000);</p>
-          <p> // Motor no gira digitalWrite (mizqB, LOW); delay(5000); </p>
-
-          <p> // Motor gira en un sentido digitalWrite (mderA, HIGH); digitalWrite (mderB, LOW); delay(4000);</p>
-          <p> // Motor no gira digitalWrite (mderA, LOW); delay(500);</p>
-          <p> // Motor gira en sentido inverso digitalWrite (mderB, HIGH); delay(4000);</p>
-          <p> // Motor no gira digitalWrite (mderB, LOW);   delay(5000);</p>
-        }
-
-      </div>
-
 
     </div>
 
 
-
           <div id="footer">
             <div class="columnas">
-
-              <div class="footer-column">
-                <h6>texto de ejemplo</h6>
-
-                <ul>
-                  Diamante I (valorant)
-                  <img src="diamante-valorant.jpg" height="s30px" width="30px" >
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-
-              </div>
-              <div class="footer-column">
-                <h6></h6>
-                <ul>
-                  <li></li>
-                  <li></li>
-                  <li> </li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>
               <div class="footer-column">
                 <h6></h6>
                 <ul>
@@ -179,14 +51,11 @@
                   <li>08924</li>
                   <li>Barcelona</li>
                   ESPAÑA
-                  <img src="bandera-ESPAÑA.gif" height="30px" width="50px">
+                  <img src="bandera-ESPAÑA.gif" height="100px" width="120px">
                   <li>888-123-1234</li>
                 </ul>
               </div>
             </div>
-
-
-
 
   </body>
   <script type="text/javascript" src="main.js"></script>

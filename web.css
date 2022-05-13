@@ -103,17 +103,22 @@ menu {
 }
 .columnas {
   display: grid;
-  grid-template-columns: 1fr 0fr 1fr ;
-  padding: 5px;
+  padding: 10px;
+  background-color: #ffa31a;
+
 }
 
-#footer {
-   background-color: #7bf71b;
-   color: gray;
+.footer {
+background-color: black;
+grid-template-columns: 1fr 1fr 1fr;
+
+width: 100%;
+color: gray ;
+padding: 100%:
  }
 
  .footer-columns {
-padding: 100%;
+   padding: 100%;
  }
 
  #footer h6 {
