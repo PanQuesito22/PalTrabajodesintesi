@@ -104,7 +104,7 @@ menu {
 .columnas {
   display: grid;
   padding: 10px;
-  background-color: #ffa31a;
+  background-color: black;
 
 }
 
@@ -133,3 +133,7 @@ padding: 100%:
    margin: 0;
    padding: 0;
  }
+.footer-column iframe {
+  width: 400px;
+  height: 200px;
+}
