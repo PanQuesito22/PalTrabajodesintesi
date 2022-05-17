@@ -6,7 +6,7 @@ menu {
  /* Navbar container */
 .navbar {
  overflow: hidden;
- background-color: #333;
+ background-color: #003300;
  font-family: Arial;
 }
 
@@ -103,27 +103,19 @@ menu {
 }
 .columnas {
   display: grid;
-  padding: 10px;
-  background-color: black;
-
+  grid-template-columns: 1fr 1fr 1fr ;
+  padding: 3%;
+  margin-top: 500px;
 }
 
-.footer {
-background-color: black;
-grid-template-columns: 1fr 1fr 1fr;
-
-width: 100%;
-color: gray ;
-padding: 100%:
+#footer {
+   background-color: black;
+   color: gray;
  }
 
  .footer-columns {
-   padding: 100%;
  }
 
- #footer h6 {
-   font-size: 1em;
- }
 
  #footer ul {
    font-size: 0.8em;
@@ -133,7 +125,7 @@ padding: 100%:
    margin: 0;
    padding: 0;
  }
-.footer-column iframe {
-  width: 400px;
-  height: 200px;
-}
+ .footer-column iframe {
+   width: 400px;
+   height: 200px;
+ }

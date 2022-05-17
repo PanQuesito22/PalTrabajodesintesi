@@ -11,35 +11,57 @@ padding-right: : 30px;
 }
 
 .texto2 {
-  text-align: center;
-
+text-align: center;
 padding-left: 30px;
 padding-right:  30px;
 
 }
 
 .texto3 {
-  padding-left: 30px;
-  text-align: center;
-
+padding-left: 30px;
+text-align: center;
 padding-right:  30px;
 }
 
 .ruedas {
-  text-align: center;
+text-align: center;
 }
 
 .servo {
-  text-align: center;
+text-align: center;
 }
 
 .ojos {
-  text-align: center;
+text-align: center;
 }
 
 .links {
 text-align: center;
-  padding-left: 30px;
-  padding-top: 30px;
+padding-left: 30px;
+padding-top: 30px;
+margin-bottom: 500px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
 
+.button {
+padding: 20px 25px;
+font-size: 24px;
+text-align: center;
+cursor: pointer;
+margin-top: 300px;
+outline: none;
+color: #fff;
+background-color: #04AA6D;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
 }

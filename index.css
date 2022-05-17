@@ -1,5 +1,5 @@
 .capa1 {
-  background-color: yellow;
+  background-color: #03609c;
   text-align: center;
   padding:10px;
 }
@@ -9,25 +9,9 @@ text-align: right;
 }
 
 .capa2 {
-  background-color: orange;
+  background-color: white;
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .texto  {
@@ -38,29 +22,3 @@ font-size: 20px;
 width: 120px;
 height: 70px ;
 }
-.columnas {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 5px;
-}
-
-#footer {
-   background-color: yellow;
-   color: gray;
- }
-
- .footer-columns {
- }
-
- #footer h6 {
-   font-size: 1em;
- }
-
- #footer ul {
-   font-size: 0.8em;
- }
- .footer-column ul {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
- }
