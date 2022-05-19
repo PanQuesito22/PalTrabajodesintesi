@@ -1,6 +1,6 @@
 
 .columnas {
-  margin-top: 500px;
+  margin-top: 00px;
 }
 .texto {
 }
@@ -38,44 +38,48 @@ text-align: center;
 }
 .links {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0fr 1fr 1fr;
 }
 .fondos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   position: relative;
 }
 .fondo1 {
-  background-color: red;
+  background-color: gray;
   height: 800px;
-  padding: 270px;
+  padding: 100px;
   padding-top: 00px;
   padding-bottom: 00px;
+  width: 200px;
+
 
 }
 .fondo2 {
-  background-color: yellow;
+  background-color: black;
   height: 800px;
-  padding: 270px;
+  padding: 105px;
   padding-top: 00px;
   padding-bottom: 00px;
+  width: 200px;
 
 
 }
 .fondo3 {
-  background-color: red;
+  background-color: gray;
   height: 800px;
-  padding: 270px;
+  padding: 105px;
   padding-top: 00px;
   padding-bottom: 00px;
+  width: 200px;
+
 
 }
 .fondo4 {
   background-color: black;
   height: 800px;
-  padding: 270px;
+  padding: 80px;
   padding-top: 00px;
   padding-bottom: 00px;
+  width: 300px;
 
 }
 .button {
