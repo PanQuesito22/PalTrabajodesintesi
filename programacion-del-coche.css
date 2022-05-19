@@ -1,5 +1,7 @@
 
-
+.columnas {
+  margin-top: 500px;
+}
 .texto {
 }
 
@@ -32,36 +34,68 @@ text-align: center;
 }
 
 .ojos {
-text-align: center;
+  text-align: center;
 }
-
 .links {
-text-align: center;
-padding-left: 30px;
-padding-top: 30px;
-margin-bottom: 500px;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+.fondos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+}
+.fondo1 {
+  background-color: red;
+  height: 800px;
+  padding: 270px;
+  padding-top: 00px;
+  padding-bottom: 00px;
 
+}
+.fondo2 {
+  background-color: yellow;
+  height: 800px;
+  padding: 270px;
+  padding-top: 00px;
+  padding-bottom: 00px;
+
+
+}
+.fondo3 {
+  background-color: red;
+  height: 800px;
+  padding: 270px;
+  padding-top: 00px;
+  padding-bottom: 00px;
+
+}
+.fondo4 {
+  background-color: black;
+  height: 800px;
+  padding: 270px;
+  padding-top: 00px;
+  padding-bottom: 00px;
+
+}
 .button {
-padding: 20px 25px;
-font-size: 24px;
-text-align: center;
-cursor: pointer;
-margin-top: 300px;
-outline: none;
-color: #fff;
-background-color: #04AA6D;
-border: none;
-border-radius: 15px;
-box-shadow: 0 9px #999;
+  padding: 20px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 300px;
+  outline: none;
+  color: #fff;
+  background-color: black;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
 .button:hover {background-color: #3e8e41}
 
 .button:active {
-background-color: #3e8e41;
-box-shadow: 0 5px #666;
-transform: translateY(4px);
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

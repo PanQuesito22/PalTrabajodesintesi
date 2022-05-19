@@ -1,0 +1,33 @@
+.fondos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+}
+.fondo1 {
+  background-color: purple;
+  height: 100px;
+}
+.fondo2 {
+  background-color: blue;
+  height: 100px;
+}
+.fondo3 {
+  background-color: green;
+  height: 100px;
+}
+.fondo4 {
+  background-color: yellow;
+  height: 100px;
+}
+.fondo5 {
+  background-color: orange;
+  height: 100px;
+}
+.fondo6 {
+  background-color: red;
+  height: 100px;
+}
+
+.columnas {
+  margin-top: 500px;
+}

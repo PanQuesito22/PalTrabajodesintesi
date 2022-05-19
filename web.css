@@ -6,7 +6,7 @@ menu {
  /* Navbar container */
 .navbar {
  overflow: hidden;
- background-color: #003300;
+ background-color: #edbb99 ;
  font-family: Arial;
 }
 
@@ -105,16 +105,12 @@ menu {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
   padding: 3%;
-  margin-top: 500px;
 }
 
 #footer {
    background-color: black;
    color: gray;
- }
-
- .footer-columns {
- }
+}
 
 
  #footer ul {
