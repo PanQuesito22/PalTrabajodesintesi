@@ -38,43 +38,43 @@ text-align: center;
 }
 .links {
   display: grid;
-  grid-template-columns: 1fr 0fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .fondos {
   position: relative;
 }
 .fondo1 {
-  background-color: gray;
+  background-color: white;
   height: 800px;
-  padding: 100px;
+  padding: 80px;
   padding-top: 00px;
   padding-bottom: 00px;
-  width: 200px;
+  width: 300px;
 
 
 }
 .fondo2 {
-  background-color: black;
+  background-color: white;
   height: 800px;
-  padding: 105px;
+  padding: 80px;
   padding-top: 00px;
   padding-bottom: 00px;
-  width: 200px;
+  width: 300px;
 
 
 }
 .fondo3 {
-  background-color: gray;
+  background-color: white;
   height: 800px;
-  padding: 105px;
+  padding: 80px;
   padding-top: 00px;
   padding-bottom: 00px;
-  width: 200px;
+  width: 300px;
 
 
 }
 .fondo4 {
-  background-color: black;
+  background-color: white;
   height: 800px;
   padding: 80px;
   padding-top: 00px;
