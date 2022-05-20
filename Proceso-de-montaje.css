@@ -1,7 +1,7 @@
 .img {
   display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .columnas {
-  margin-top: 500px;
+  margin-top: 00px;
 }
