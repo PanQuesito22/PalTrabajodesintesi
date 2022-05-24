@@ -1,37 +1,65 @@
-.fondos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  position: relative;
-}
-.fondo1 {
-  background-color: purple;
-  height: 100px;
-}
-.fondo2 {
-  background-color: blue;
-  height: 100px;
-}
-.fondo3 {
-  background-color: green;
-  height: 100px;
-}
-.fondo4 {
-  background-color: yellow;
-  height: 100px;
-}
-.fondo5 {
-  background-color: orange;
-  height: 100px;
-}
-.fondo6 {
-  background-color: red;
-  height: 100px;
-}
-
 .columnas {
-  margin-top: 500px;
+  margin-top: 00px;
 }
 
 .M {
   text-align: center;
+}
+.pasouno {
+  text-align: center;
+  font-size:30px;
+  font-family: fantasy;
+}
+.pasodos {
+  text-align: center;
+  font-size:30px;
+  font-family: fantasy;
+}
+.pasotres {
+  text-align: center;
+  font-size:30px;
+  font-family: fantasy;
+}
+.pasoquatro {
+  text-align: center;
+  font-size:30px;
+  font-family: fantasy;
+}
+.pasocinco {
+  text-align: center;
+  font-size:30px;
+  font-family: fantasy;
+}
+.pasoseis {
+  text-align: center;
+}
+.pasouno h2 {
+  text-align: center;
+  font-size:30px;
+  font-family: cursive;
+}
+.pasodos h2 {
+  text-align: center;
+  font-size:30px;
+  font-family: cursive;
+}
+.pasotres h2 {
+  text-align: center;
+  font-size:30px;
+  font-family: cursive;
+}
+.pasoquatro h2 {
+  text-align: center;
+  font-size:30px;
+  font-family: cursive;
+}
+.pasocinco h2 {
+  text-align: center;
+  font-size:30px;
+  font-family: cursive;
+}
+.pasocinco img {
+  text-align: right;
+  height:250px;
+  width:250px;
 }
