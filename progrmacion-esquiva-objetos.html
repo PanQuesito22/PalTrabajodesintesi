@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="web.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="progrmacio-esquivador-objetos.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+</head>
+<body>
+  <menu></menu>
+  <div class="texto55">
+    <!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">IN1</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">;</span>  <span style="color: #75715e">// Pin digital 13 para controlar sentido giro motor izquierdo</span>
+      <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">IN2</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">11</span><span style="color: #f8f8f2">;</span>  <span style="color: #75715e">// Pin digital 12 para controlar sentido giro motor izquierdo</span>
+
+      <span style="color: #75715e">// Definición de variables y constantes relacionadas con el motor derecho</span>
+      <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">IN3</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">12</span><span style="color: #f8f8f2">;</span>  <span style="color: #75715e">// Pin digital 11 para controlar sentido giro motor izquierdo</span>
+      <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">IN4</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">13</span><span style="color: #f8f8f2">;</span>  <span style="color: #75715e">// Pin digital 10 para controlar sentido giro motor izquierdo</span>
+
+      <span style="color: #75715e">// Este programa usará el sensor de ultrasonidos HCSR04 </span>
+      <span style="color: #75715e">// para medir la distancia a la que se encuentran</span>
+      <span style="color: #75715e">// diferentes obstáculos en centímetros y mostrarlo por el puerto serie.</span>
+      <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">triggerEmisor</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">7</span><span style="color: #f8f8f2">;</span>
+      <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">echoReceptor</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">6</span><span style="color: #f8f8f2">;</span>
+      <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">valorUmbral</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">50</span><span style="color: #f8f8f2">;</span>
+      <span style="color: #66d9ef">long</span> <span style="color: #f8f8f2">tiempoEntrada;</span>  <span style="color: #75715e">// Almacena el tiempo de respuesta del sensor de entrada</span>
+      <span style="color: #66d9ef">float</span> <span style="color: #f8f8f2">distanciaEntrada;</span>  <span style="color: #75715e">// Almacena la distancia en cm a la que se encuentra el objeto</span>
+
+      <span style="color: #75715e">// Función que se ejecuta una sola vez al cargar el programa</span>
+      <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span>
+      <span style="color: #f8f8f2">{</span>
+        <span style="color: #75715e">// Se declaran todos los pines como salidas</span>
+        <span style="color: #f8f8f2">pinMode</span> <span style="color: #f8f8f2">(IN1,</span> <span style="color: #f8f8f2">OUTPUT);</span>
+        <span style="color: #f8f8f2">pinMode</span> <span style="color: #f8f8f2">(IN2,</span> <span style="color: #f8f8f2">OUTPUT);</span>
+        <span style="color: #f8f8f2">pinMode</span> <span style="color: #f8f8f2">(IN3,</span> <span style="color: #f8f8f2">OUTPUT);</span>
+        <span style="color: #f8f8f2">pinMode</span> <span style="color: #f8f8f2">(IN4,</span> <span style="color: #f8f8f2">OUTPUT);</span>
+
+        <span style="color: #f8f8f2">pinMode(triggerEmisor,OUTPUT);</span> <span style="color: #75715e">// El emisor emite por lo que es configurado como salida</span>
+        <span style="color: #f8f8f2">pinMode(echoReceptor,INPUT);</span>   <span style="color: #75715e">// El receptor recibe por lo que es configurado como entrada</span>
+        <span style="color: #f8f8f2">Serial.begin(</span><span style="color: #ae81ff">9600</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// Inicia el puerto de comunicaciones en serie</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #75715e">// Función que se repite de manera periódica</span>
+        <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span>
+        <span style="color: #f8f8f2">{</span>
+          <span style="color: #f8f8f2">sensorUltrasonidos();</span>
+          <span style="color: #75715e">// Si el valor de la distancia es menor que 5 cm se para y sigue recto en caso contrario</span>
+          <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(distanciaEntrada</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">valorUmbral)</span>
+          <span style="color: #f8f8f2">{</span>
+
+            <span style="color: #f8f8f2">robotAvance();</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">else</span>
+            <span style="color: #f8f8f2">{</span>
+              <span style="color: #f8f8f2">robotDerecha</span> <span style="color: #f8f8f2">();</span>
+              <span style="color: #f8f8f2">}</span>
+              <span style="color: #f8f8f2">}</span>
+              <span style="color: #75715e">/*</span>
+              <span style="color: #75715e"> Función sensorUltrasonidos: para medir la longitud del pulso entrante. </span>
+              <span style="color: #75715e"> Mide el tiempo que transcurrido entre el envío del pulso ultrasónico </span>
+              <span style="color: #75715e"> y cuando el sensor recibe el rebote, </span>
+              <span style="color: #75715e"> es decir: desde que el pin echo empieza a recibir el rebote, HIGH, </span>
+              <span style="color: #75715e"> hasta que deja de hacerlo, LOW, la longitud del pulso entrante.</span>
+              <span style="color: #75715e">*/</span>
+              <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">sensorUltrasonidos</span><span style="color: #f8f8f2">()</span>
+              <span style="color: #f8f8f2">{</span>
+                <span style="color: #75715e">// Se inicializa el sensor de infrasonidos</span>
+                <span style="color: #f8f8f2">digitalWrite(triggerEmisor,LOW);</span>  <span style="color: #75715e">// Para estabilizar</span>
+                <span style="color: #f8f8f2">delayMicroseconds(</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">);</span>
+
+                <span style="color: #75715e">// Comenzamos las mediciones</span>
+                <span style="color: #75715e">// Se envía una señal activando la salida trigger durante 10 microsegundos</span>
+                <span style="color: #f8f8f2">digitalWrite(triggerEmisor,</span> <span style="color: #f8f8f2">HIGH);</span>  <span style="color: #75715e">// envío del pulso ultrasónico</span>
+                <span style="color: #f8f8f2">delayMicroseconds(</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">);</span>
+                <span style="color: #f8f8f2">tiempoEntrada</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">pulseIn(echoReceptor,</span> <span style="color: #f8f8f2">HIGH);</span>
+                <span style="color: #f8f8f2">distanciaEntrada</span><span style="color: #f92672">=</span> <span style="color: #66d9ef">int</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0.017</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">tiempoEntrada);</span> <span style="color: #75715e">// Fórmula para calcular la distancia en cm</span>
+                <span style="color: #f8f8f2">Serial.println(</span><span style="color: #e6db74">&quot;El valor de la distancia es &quot;</span><span style="color: #f8f8f2">);</span>
+                <span style="color: #f8f8f2">Serial.println(distanciaEntrada);</span>
+                <span style="color: #f8f8f2">delay(</span><span style="color: #ae81ff">200</span><span style="color: #f8f8f2">);</span>
+                <span style="color: #f8f8f2">}</span>
+                <span style="color: #75715e">/*</span>
+                <span style="color: #75715e">  Función robotAvance: esta función hará que ambos motores se activen a máxima potencia</span>
+                <span style="color: #75715e">  por lo que el robot avanzará hacia delante</span>
+                <span style="color: #75715e">*/</span>
+                <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">robotAvance</span><span style="color: #f8f8f2">()</span>
+                <span style="color: #f8f8f2">{</span>
+                  <span style="color: #75715e">// Motor izquierdo</span>
+                  <span style="color: #75715e">// Al mantener un pin HIGH y el otro LOW el motor gira en un sentido</span>
+                  <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN1,</span> <span style="color: #f8f8f2">HIGH);</span>
+                  <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN2,</span> <span style="color: #f8f8f2">LOW);</span>
+                  <span style="color: #75715e">// Motor derecho</span>
+                  <span style="color: #75715e">// Al mantener un pin HIGH y el otro LOW el motor gira en un sentido</span>
+                  <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN3,</span> <span style="color: #f8f8f2">HIGH);</span>
+                  <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN4,</span> <span style="color: #f8f8f2">LOW);</span>
+                  <span style="color: #f8f8f2">}</span>
+                  <span style="color: #75715e">/*</span>
+                  <span style="color: #75715e">  Función robotRetroceso: esta función hará que ambos motores se activen a máxima potencia </span>
+                  <span style="color: #75715e">  en sentido contrario al anterior por lo que el robot avanzará hacia atrás</span>
+                  <span style="color: #75715e">*/</span>
+                  <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">robotRetroceso</span><span style="color: #f8f8f2">()</span>
+                  <span style="color: #f8f8f2">{</span>
+                    <span style="color: #75715e">// Motor izquierdo</span>
+                    <span style="color: #75715e">// Al mantener un pin LOW y el otro HIGH el motor gira en sentido contrario al anterior</span>
+                    <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN1,</span> <span style="color: #f8f8f2">LOW);</span>
+                    <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN2,</span> <span style="color: #f8f8f2">HIGH);</span>
+                    <span style="color: #75715e">// Motor derecho</span>
+                    <span style="color: #75715e">// Al mantener un pin LOW y el otro HIGH el motor gira en sentido contrario al anterior</span>
+                    <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN3,</span> <span style="color: #f8f8f2">LOW);</span>
+                    <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN4,</span> <span style="color: #f8f8f2">HIGH);</span>
+                    <span style="color: #f8f8f2">}</span>
+                    <span style="color: #75715e">/*</span>
+                    <span style="color: #75715e">  Función robotDerecha: esta función acccionará el motor izquierdo y parará el derecho</span>
+                    <span style="color: #75715e">  por lo que el coche girará hacia la derecha (sentido horario)</span>
+                    <span style="color: #75715e">*/</span>
+                    <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">robotDerecha</span><span style="color: #f8f8f2">()</span>
+                    <span style="color: #f8f8f2">{</span>
+                      <span style="color: #75715e">//  Motor izquierdo</span>
+                      <span style="color: #75715e">// Se activa el motor izquierdo</span>
+                      <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN1,</span> <span style="color: #f8f8f2">HIGH);</span>
+                      <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN2,</span> <span style="color: #f8f8f2">LOW);</span>
+                      <span style="color: #75715e">// Motor derecho</span>
+                      <span style="color: #75715e">// Se para el motor derecho</span>
+                      <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN3,</span> <span style="color: #f8f8f2">LOW);</span>
+                      <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN4,</span> <span style="color: #f8f8f2">LOW);</span>
+                      <span style="color: #f8f8f2">}</span>
+                      <span style="color: #75715e">/*</span>
+                      <span style="color: #75715e">  Función robotIzquierda: esta función acccionará el motor derecho y parará el izquierdo</span>
+                      <span style="color: #75715e">  por lo que el coche girará hacia la izquierda (sentido antihorario)</span>
+                      <span style="color: #75715e">*/</span>
+                      <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">robotIzquierda</span> <span style="color: #f8f8f2">()</span>
+                      <span style="color: #f8f8f2">{</span>
+                        <span style="color: #75715e">//  Motor izquierdo</span>
+                        <span style="color: #75715e">// Se para el motor izquierdo</span>
+                        <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN1,</span> <span style="color: #f8f8f2">LOW);</span>
+                        <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN2,</span> <span style="color: #f8f8f2">LOW);</span>
+                        <span style="color: #75715e">// Motor derecho</span>
+                        <span style="color: #75715e">// Se activa el motor derecho</span>
+                        <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN3,</span> <span style="color: #f8f8f2">HIGH);</span>
+                        <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN4,</span> <span style="color: #f8f8f2">LOW);</span>
+                        <span style="color: #f8f8f2">}</span>
+                        <span style="color: #75715e">/*</span>
+                        <span style="color: #75715e">  Función robotParar: esta función parará ambos motores</span>
+                        <span style="color: #75715e">  por lo que el robot se parará.</span>
+                        <span style="color: #75715e">*/</span>
+                        <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">robotParar</span><span style="color: #f8f8f2">()</span>
+                        <span style="color: #f8f8f2">{</span>
+                          <span style="color: #75715e">// Motor izquierdo</span>
+                          <span style="color: #75715e">// Se para el motor izquierdo</span>
+                          <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN1,</span> <span style="color: #f8f8f2">LOW);</span>
+                          <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN2,</span> <span style="color: #f8f8f2">LOW);</span>
+                          <span style="color: #75715e">// Motor derecho</span>
+                          <span style="color: #75715e">// Se para el motor derecho</span>
+                          <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN3,</span> <span style="color: #f8f8f2">LOW);</span>
+                          <span style="color: #f8f8f2">digitalWrite</span> <span style="color: #f8f8f2">(IN4,</span> <span style="color: #f8f8f2">LOW);</span>
+                          <span style="color: #f8f8f2">}</span>
+                        </pre></div>
+
+
+                      </div>
+                      <div class="gif">
+                        <img src="coche_evita_paret.gif">
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      <div class="footer">
+                        <div id="footer">
+                          <div class="columnas">
+                            <div class="footer-column">
+                              <ul>
+                                <li>Arduino</li>
+                                <li>Santa Coloma De Gramanet</li>
+                                <li>Emails</li>
+                                <li>cparralejo@elpuig.xeill.net</li>
+                                <li>vpachon@elpuig.xeill.net</li>
+                                <li>Institut Puig Castellar </li>
+                                <li></li>
+                                <li></li>
+                              </ul>
+                            </div>
+                            <div class="footer-column">
+                              <ul>
+                                <li>Institut Puig Castellar</li>
+                                <li>Avinguda Anselm de Riu, 10<li>
+                                  <li>08924, Santa Coloma de Gramenet.</li>
+                                  <li>Tn: 93 391 61 11</li>
+                                  <li>Tn: 93 189 09 02</li>
+                                  <li>FAX: 93 392 44 07</li>
+                                  <li>E-mail: iespuigcastellar@xtec.cat<li>
+                                  </ul>
+                                </div>
+                                <div class="footer-column">
+                                  <ul>
+                                    <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5980.655721854611!2d2.1982676164777093!3d41.4538038411104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bcf3c7a3aa23%3A0x9711d34b7cfe4e4f!2sInstitut%20p%C3%BAblic%20Puig%20Castellar!5e0!3m2!1ses!2ses!4v1652773413159!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></li>
+                                  </ul>
+                                </div>
+                                <div class="footer-column">
+                                  <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+
+                        </body>
+                        <script type="text/javascript" src="main.js"></script>
+                        </html>
