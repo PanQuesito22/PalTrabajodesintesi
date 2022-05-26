@@ -15,37 +15,38 @@
 
   <div class="texto3">
     <h3>Codigo de los motores</h3>
-    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #333399; font-weight: bold">int</span> mizqA <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3</span>; <span style="color: #888888">// Pin digital del motor de la izquierda adelante</span>
-      <span style="color: #333399; font-weight: bold">int</span> mizqB <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">4</span>; <span style="color: #888888">// Pin digital del motor izquierda hacia atras</span>
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #2b91af">int</span> mizqA = 3; <span style="color: #008000">// Pin digital del motor de la izquierda adelante</span>
+          <span style="color: #2b91af">int</span> mizqB = 4; <span style="color: #008000">// Pin digital del motor izquierda hacia atras</span>
 
-      <span style="color: #333399; font-weight: bold">int</span> mderA <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>; <span style="color: #888888">// Pin digital del motor de la derecha adelante</span>
-      <span style="color: #333399; font-weight: bold">int</span> mderB <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">6</span>; <span style="color: #888888">// Pin digital del motor derecha hacia atras</span>
+          <span style="color: #2b91af">int</span> mderA = 5; <span style="color: #008000">// Pin digital del motor de la derecha adelante</span>
+          <span style="color: #2b91af">int</span> mderB = 6; <span style="color: #008000">// Pin digital del motor derecha hacia atras</span>
 
-      <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>(){
-        <span style="color: #888888">// Configuramos como salidas los pines donde se conectan los motores</span>
-        pinMode(mizqA, OUTPUT);
-        pinMode(mizqB, OUTPUT);
+          <span style="color: #2b91af">void</span> setup(){
+            <span style="color: #008000">// Configuramos como salidas los pines donde se conectan los motores</span>
+            pinMode(mizqA, OUTPUT);
+            pinMode(mizqB, OUTPUT);
 
-        pinMode(mderA, OUTPUT);
-        pinMode(mderB, OUTPUT);
-      }
+            pinMode(mderA, OUTPUT);
+            pinMode(mderB, OUTPUT);
+          }
 
-      <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>()
-      {
-        <span style="color: #888888">// Motor gira en un sentido digitalWrite (mizqA, HIGH); digitalWrite (mizqB, LOW); delay(4000); </span>
-        <span style="color: #888888">// Motor no gira digitalWrite (mizqA, LOW);  delay(500);</span>
-        <span style="color: #888888">// Motor gira en sentido inverso  digitalWrite (mizqB, HIGH); delay(4000);</span>
-        <span style="color: #888888">// Motor no gira digitalWrite (mizqB, LOW); delay(5000); </span>
+          <span style="color: #2b91af">void</span> loop()
+          {
+            <span style="color: #008000">// Motor gira en un sentido digitalWrite (mizqA, HIGH); digitalWrite (mizqB, LOW); delay(4000); </span>
+            <span style="color: #008000">// Motor no gira digitalWrite (mizqA, LOW);  delay(500);</span>
+            <span style="color: #008000">// Motor gira en sentido inverso  digitalWrite (mizqB, HIGH); delay(4000);</span>
+            <span style="color: #008000">// Motor no gira digitalWrite (mizqB, LOW); delay(5000); </span>
 
-        <span style="color: #888888">// Motor gira en un sentido digitalWrite (mderA, HIGH); digitalWrite (mderB, LOW); delay(4000);&lt;/p&gt;</span>
-        <span style="color: #888888">// Motor no gira digitalWrite (mderA, LOW); delay(500);</span>
-        <span style="color: #888888">// Motor gira en sentido inverso digitalWrite (mderB, HIGH); delay(4000);</span>
-        <span style="color: #888888">// Motor no gira digitalWrite (mderB, LOW);   delay(5000);</span>
-      }
-      <div class="ruedas">
-        <img src="ruedas.gif">
-      </div>
-    </pre></div>
+            <span style="color: #008000">// Motor gira en un sentido digitalWrite (mderA, HIGH); digitalWrite (mderB, LOW); delay(4000);&lt;/p&gt;</span>
+            <span style="color: #008000">// Motor no gira digitalWrite (mderA, LOW); delay(500);</span>
+            <span style="color: #008000">// Motor gira en sentido inverso digitalWrite (mderB, HIGH); delay(4000);</span>
+            <span style="color: #008000">// Motor no gira digitalWrite (mderB, LOW);   delay(5000);</span>
+          }
+
+          <div class="ruedas">
+      <img src="ruedas.gif">
+    </div>
+  </pre></div>
 
   </div>
 <div class="footer">

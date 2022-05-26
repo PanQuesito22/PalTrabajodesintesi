@@ -16,43 +16,70 @@
   <div class="texto1">
 
     <h3>Codigo del servomotor</h3>
-    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">      <span style="color: #888888">// Incluímos la librería para poder controlar el servo</span>
-        <span style="color: #FF0000; background-color: #FFAAAA"></span>include
+    <!-- HTML generated using hilite.me --><div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">       <span style="color: #60a0b0; font-style: italic">// Incluímos la librería para poder controlar el servo</span>
+            include
 
-        <span style="color: #888888">// Declaramos la variable para controlar el servo</span>
-          Servo servoMotor;
+            <span style="color: #60a0b0; font-style: italic">// Declaramos la variable para controlar el servo</span>
+              Servo servoMotor;
 
-           <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>() {
-            <span style="color: #888888">// Iniciamos el monitor serie para mostrar el resultado</span>
-            Serial.begin(<span style="color: #0000DD; font-weight: bold">9600</span>);
+               <span style="color: #902000">void</span> <span style="color: #06287e">setup</span>() {
+                <span style="color: #60a0b0; font-style: italic">// Iniciamos el monitor serie para mostrar el resultado</span>
+                Serial.begin(<span style="color: #40a070">9600</span>);
 
-               <span style="color: #888888">// Iniciamos el servo para que empiece a trabajar con el pin 9</span>
-              servoMotor.attach(<span style="color: #0000DD; font-weight: bold">8</span>);
-            }
+                   <span style="color: #60a0b0; font-style: italic">// Iniciamos el servo para que empiece a trabajar con el pin 9</span>
+                  servoMotor.attach(<span style="color: #40a070">8</span>);
+                }
 
-             <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>() {
+                 <span style="color: #902000">void</span> <span style="color: #06287e">loop</span>() {
 
-               <span style="color: #888888">// Desplazamos a la posición 0º</span>
-                servoMotor.write(<span style="color: #0000DD; font-weight: bold">0</span>);
-                <span style="color: #888888">// Esperamos 1 segundo</span>
-                delay(<span style="color: #0000DD; font-weight: bold">1000</span>);
+                   <span style="color: #60a0b0; font-style: italic">// Desplazamos a la posición 0º</span>
+                    servoMotor.write(<span style="color: #40a070">0</span>);
+                    <span style="color: #60a0b0; font-style: italic">// Esperamos 1 segundo</span>
+                    delay(<span style="color: #40a070">1000</span>);
 
-                 <span style="color: #888888">// Desplazamos a la posición 90º</span>
-                  servoMotor.write(<span style="color: #0000DD; font-weight: bold">90</span>);
-                  <span style="color: #888888">// Esperamos 1 segundo</span>
-                  delay(<span style="color: #0000DD; font-weight: bold">1000</span>);
+                     <span style="color: #60a0b0; font-style: italic">// Desplazamos a la posición 90º</span>
+                      servoMotor.write(<span style="color: #40a070">90</span>);
+                      <span style="color: #60a0b0; font-style: italic">// Esperamos 1 segundo</span>
+                      delay(<span style="color: #40a070">1000</span>);
 
-                   <span style="color: #888888">// Desplazamos a la posición 180º</span>
-                    servoMotor.write(<span style="color: #0000DD; font-weight: bold">180</span>);
-                    <span style="color: #888888">// Esperamos 1 segundo</span>
-                    delay(<span style="color: #0000DD; font-weight: bold">1000</span>);
-                  }
+                       <span style="color: #60a0b0; font-style: italic">// Desplazamos a la posición 180º</span>
+                        servoMotor.write(<span style="color: #40a070">180</span>);
+                        <span style="color: #60a0b0; font-style: italic">// Esperamos 1 segundo</span>
+                        delay(<span style="color: #40a070">1000</span>);
+                      }
+
+
                   <div class="servo">
                     <img src="servo.gif">
                   </div>
-  </pre></div>
+                </pre></div>
 
               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
               <div class="footer">
 
